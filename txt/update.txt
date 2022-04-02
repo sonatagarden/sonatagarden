@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="flowerProject.Item" %>
+<%
+	Item updateItem = (Item) request.getAttribute("updateItem");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="STYLESHEET" href="css/update.css" type="text/css">
+<title>データ更新</title>
+</head>
+<body>
+<h1>データ更新</h1>
+<div align="right">
+<form action="login" method="post">
+<input type="hidden" name="action" value="logout">
+<input type="submit" id="logout" name="logout" value="ログアウト">
+</form>
+</div>
+<hr>
+<div>
+	<table border="0">
+	<form action="login" method="post">
+	<input type="hidden" name="action" value="update_action">
+	<input type="hidden" name="id" value=<%= updateItem.get_id() %>>
+	<tr>
+		<th class="update">花の名前</th>
+		<td><input type="text" id="name" name="name" value="<%= updateItem.get_name() %>" size="24"></td>
+	</tr>
+	<tr>
+		<th class="update">花の色</th>
+		<td><input type="text" id="color" name="color" value="<%= updateItem.get_color() %>" size="24"></td>
+	</tr>
+	<tr>
+		<th class="update">花の開花時期</th>
+		<td><input type="text" id="span" name="span" value="<%= updateItem.get_span() %>" size="24"></td>
+	</tr>
+	<tr>
+		<th class="update">花の好む生育地</th>
+		<td><input type="text" id="place" name="place" value="<%= updateItem.get_place() %>" size="24"></td>
+	</tr>
+	<tr>
+		<td align="center" class="update"><input type="submit" id="update" name="update" value="更新"></td>
+	</form>
+	<form action="login" method="post">
+	<input type="hidden" name="action" value="list">
+		<td align="center" class="cancel"><input type="submit" id="cancel" name="cancel" value="キャンセル"></td>
+	</tr>
+	</form>
+	</table>
+</div>
+</body>
+</html>
