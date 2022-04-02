@@ -1,0 +1,144 @@
+<!DOCTYPE_html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:url"           content="https://gallant-kilby-a9a401.netlify.com/" />
+        <meta property="og:type"          content="website" />
+        <meta property="og:title"         content="Your Website Title" />
+        <meta property="og:description"   content="Your description" />
+        <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
+        <title>プログラム作品｜毎日を楽しく暮らす SonataGarden</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="jscript.js"></script>
+    </head>
+    <body>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.2"></script>
+        <!--ヘッダー-->
+        <header>
+            <h1><a href="index.html"><img src="images/logo.png" alt="毎日を楽しく暮らすSonataGarden"></a></h1>
+            <nav id="global_navi">
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="self.html">自己紹介</a></li>
+                    <li><a href="handmade.html">ハンドメイド</a></li>
+                    <li class="current"><a href="program.html">プログラム</a></li>
+                    <li><a href="apli.html">ゲームアプリ</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--/ヘッダー-->
+        
+        <!--wrapper-->
+        <div id="wrapper">
+            <!--メイン-->
+            <div id="main">
+                <form id="pForm">
+                <div id="breadcrumb">
+                    <ol>
+                        <li><a href="index.html">HOME</a></li>
+                        <li>プログラム</li>
+                    </ol>
+                </div>
+                <h2>JavaScript</h2>
+                <ul>
+                    <h3>九九の計算ゲーム</h3>
+                        <input type="button" value="ゲームを始める" onclick="kukuSet()">
+                        <br><br><p>問題&nbsp;&nbsp;</p>
+                        <input type="text" size="2" id="kukuQ1">&nbsp;×&nbsp;<input type="text" size="2" id="kukuQ2">&nbsp;＝&nbsp;
+                        <input type="text" size="2" id="kukuA1">&nbsp;&nbsp;<input type="button" value="ＯＫ" onclick="kukuCheck()">
+                        <br><br><br><br>
+                    <h3>スロットマシン</h3>
+                    <table id="slottable">
+                        <tr>
+                            <td><img src="images/kuji0.gif" id="formImg1"></td>
+                            <td><img src="images/kuji0.gif" id="formImg2"></td>
+                            <td><img src="images/kuji0.gif" id="formImg3"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" value="STOP" onclick="stop1()"></td>
+                            <td><input type="button" value="STOP" onclick="stop2()"></td>
+                            <td><input type="button" value="STOP" onclick="stop3()"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <input type="button" value="START" onclick="start()">
+                            </td>
+                        </tr>
+                    </table>
+                    <br><br><br><br>
+                    <h3>背景画像の変更</h3>
+                    <p>背景のアイテムを選択してください</p>
+                    <select id="backItem">
+                        <option value="雪">雪</option>
+                        <option value="雨">雨</option>
+                        <option value="桜">桜</option>
+                        <option value="葉">葉</option>
+                    </select>&nbsp;&nbsp;
+                    <input type="button" value="変更" onclick="backMaker(20)">&nbsp;&nbsp;
+                    <input type="button" value="背景を元に戻す" onclick="backMaker(0)">
+                </ul>
+                <br><br>
+                <h2>Java</h2>
+                <ul>
+                    <h3>お花の情報管理システム</h3>
+                    <p style="line-height: 1.5">お花の情報をデータベースで管理するシステムを作成しました。<br>
+                        ユーザ認証、登録、更新、削除、検索処理を行います。<br>
+                        以下にシステムの各画面を示します。<br>
+                        各画面のイメージ画像をクリックするとJSPソースファイルを別ウィンドウで表示します。</p>
+                    <p>1.ログイン画面でユーザ情報を入力しログインします。</p>
+                    <img src="images/ログイン画面.jpg" onclick="openText('login')" title="画像をクリックするとソースを表示します"><br><br>
+                    <p>2.データ一覧画面でユーザ情報に基づくお花の情報をデータベースから取得し表示します。</p>
+                    <img src="images/データ一覧画面.jpg" onclick="openText('list')" title="画像をクリックするとソースを表示します"><br><br>
+                    <p>3.キーワードを入力しデータベースから情報を検索します。</p>
+                    <img src="images/検索機能.jpg" style="float:left;"><img src="images/検索一覧画面.jpg" style="float:right;" onclick="openText('searchList')" title="画像をクリックするとソースを表示します">
+                    <p style="line-height: 3">4.データ登録ボタン押下で登録画面に遷移し、お花の情報をデータベースに登録します。</p>
+                    <img src="images/登録画面.jpg" onclick="openText('add')" title="画像をクリックするとソースを表示します"><br><br>
+                    <p>5.更新ボタン押下で更新画面に遷移し、お花の情報をデータベースに更新します。</p>
+                    <img src="images/更新画面.jpg" onclick="openText('update')" title="画像をクリックするとソースを表示します"><br><br>
+                    <p>6.削除ボタン押下で削除画面に遷移し、お花の情報をデータベースから削除します。</p>
+                    <img src="images/削除画面.jpg" onclick="openText('delete')" title="画像をクリックするとソースを表示します"><br><br>
+                    <p>7.ログアウトボタン押下でログアウトします。</p>
+                    <img src="images/ログアウト前画面.jpg" style="float:left;"><img src="images/ログアウト後画面.jpg" style="float:right;">
+                    <p style="line-height: 3">その他のソースファイルは以下の通りです。</p>
+                    <li><a href="txt/ActionServlet.txt" target="_blank">各処理を制御するサーブレット</a></li>
+                    <li><a href="txt/Item.txt" target="_blank">各項目クラス</a></li>
+                    <li><a href="txt/User.txt" target="_blank">ユーザ情報クラス</a></li>
+                    <p>開発環境はJDK1.8、Apache Tomcat8、H2 DataBaseを使用しました。</p>
+                </ul>
+                </form>
+            </div>
+            <!--/メイン-->
+            
+            <!--サイド-->
+            <aside id="sidebar">
+                <section id="side_banner">
+                    <h2>関連リンク</h2>
+                    <ul>
+                        <li><a href="https://ameblo.jp/sonatagarden/" target="_blank"><img src="images/banner02.jpg" alt="ブログに遊びに来てね！"></a></li>
+                        <li><a href="https://play.google.com/store/search?q=sonatagarden&c=apps" target="_blank"><img src="images/play_prism_hlock_2x.png" alt="アプリをダウンロードしてね！"></a></li>
+                    </ul>
+                </section>
+                <div class="fb-like" data-href="https://elegant-shaw-e325d3.netlify.app/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+            </aside>
+            <!--/サイド-->
+        </div>
+        <!--/wrapper-->
+        
+        <!--フッター-->
+        <footer>
+            <div id="footer_navi">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="self.html">自己紹介</a></li>
+                    <li><a href="handmade.html">ハンドメイド</a></li>
+                    <li><a href="program.html">プログラム</a></li>
+                    <li><a href="apli.html">ゲームアプリ</a></li>
+                </ul>
+            </div>
+            <small>&copy; 2019 SonataGarden.</small>
+        </footer>
+        <!--/フッター-->
+    </body>
+</html>
