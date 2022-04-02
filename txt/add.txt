@@ -1,0 +1,50 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="STYLESHEET" href="css/add.css" type="text/css">
+<title>データ登録</title>
+</head>
+<body>
+<h1>データ登録</h1>
+<div align="right">
+<form action="login" method="post">
+<input type="hidden" name="action" value="logout">
+<input type="submit" id="logout" name="logout" value="ログアウト">
+</form>
+</div>
+<hr>
+<div>
+	<form action="login" method="post">
+	<input type="hidden" name="action" value="add_action">
+	<table border="0">
+	<tr>
+		<th class="add">花の名前</th>
+		<td><input type="text" id="name" name="name" value="" size="24"></td>
+	</tr>
+	<tr>
+		<th class="add">花の色</th>
+		<td><input type="text" id="color" name="color" value="" size="24"></td>
+	</tr>
+	<tr>
+		<th class="add">花の開花時期</th>
+		<td><input type="text" id="span" name="span" value="" size="24"></td>
+	</tr>
+	<tr>
+		<th class="add">花の好む生育地</th>
+		<td><input type="text" id="place" name="place" value="" size="24"></td>
+	</tr>
+	<tr>
+		<td align="center" class="insert"><input type="submit" id="insert" name="insert" value="登録"></td>
+	</form>
+	<form action="login" method="post">
+	<input type="hidden" name="action" value="list">
+		<td align="center" class="cancel"><input type="submit" id="cancel" name="cancel" value="キャンセル"></td>
+	</form>
+	</tr>
+	</table>
+</div>
+</body>
+</html>
