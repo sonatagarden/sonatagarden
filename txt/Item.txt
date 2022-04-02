@@ -1,0 +1,124 @@
+package flowerProject;
+
+/**
+ * 各項目のクラス
+ * @author sonata garden
+ *
+ */
+public class Item {
+
+	// ID
+	private String _id;
+
+	// 花の名前
+	private String _name;
+
+	// ユーザ
+	private User _user;
+
+	// 花の色
+	private String _color;
+
+	// 花の開花期間
+	private String _span;
+
+	// 花の生育地
+	private String _place;
+
+	/**
+	 * IDのゲッター
+	 * @return ID
+	 */
+	public String get_id() {
+		return _id;
+	}
+
+	/**
+	 * IDのセッター
+	 * @param _id
+	 */
+	public void set_id(String _id) {
+		this._id = _id;
+	}
+
+	/**
+	 * 花の名前のゲッター
+	 * @return 花の名前
+	 */
+	public String get_name() {
+		return _name;
+	}
+
+	/**
+	 * 花の名前のセッター
+	 * @param _name
+	 */
+	public void set_name(String _name) {
+		this._name = _name;
+	}
+
+	/**
+	 * ユーザのゲッター
+	 * @return ユーザ
+	 */
+	public User get_user() {
+		return _user;
+	}
+
+	/**
+	 * ユーザのセッター
+	 * @param _user
+	 */
+	public void set_user(User _user) {
+		this._user = _user;
+	}
+
+	/**
+	 * 花の色のゲッター
+	 * @return 花の色
+	 */
+	public String get_color() {
+		return _color;
+	}
+
+	/**
+	 * 花の色のセッター
+	 * @param _color
+	 */
+	public void set_color(String _color) {
+		this._color = _color;
+	}
+
+	/**
+	 * 花の開花期間のゲッター
+	 * @return 花の開花期間
+	 */
+	public String get_span() {
+		return _span;
+	}
+
+	/**
+	 * 花の開花期間のセッター
+	 * @param _span
+	 */
+	public void set_span(String _span) {
+		this._span = _span;
+	}
+
+	/**
+	 * 花の生育地のゲッター
+	 * @return 花の生育地
+	 */
+	public String get_place() {
+		return _place;
+	}
+
+	/**
+	 * 花の生育地のセッター
+	 * @param _place
+	 */
+	public void set_place(String _place) {
+		this._place = _place;
+	}
+
+}
