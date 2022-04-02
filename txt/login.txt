@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="STYLESHEET" href="css/login.css" type="text/css">
+<script type="text/javascript" src="js/login.js"></script>
+<title>ログイン</title>
+</head>
+<body onload="checkLoginBtn();">
+<h1>ログイン</h1>
+<hr>
+<div>
+<form action="login" method="post">
+	<table border="0">
+	<input type="hidden" name="action" value="login_action">
+	<tr>
+		<th class="login">ユーザID</th>
+		<td><input type="text" id="userId" name="userId" value="" size="24" onkeyup="checkLoginBtn();" onchange="checkLoginBtn();"></td>
+	</tr>
+	<tr>
+		<th class="login">パスワード</th>
+		<td><input type="text" id="passWord" name="passWord" value="" size="24" onkeyup="checkLoginBtn();" onchange="checkLoginBtn();"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center" class="login"><input type="submit" id="login" name="login" value="ログイン"></td>
+	</tr>
+	</table>
+</form>
+</div>
+</body>
+</html>
