@@ -1,0 +1,56 @@
+package flowerProject;
+
+/**
+ * ユーザ情報クラス
+ * @author sonata
+ *
+ */
+public class User {
+
+	// ユーザID
+	private String _id;
+
+	// ユーザ名
+	private String _name;
+
+	/**
+	 * コンストラクタ
+	 */
+	public User() {
+		_id = null;
+		_name = null;
+	}
+
+	/**
+	 * ユーザIDのゲッター
+	 * @return ユーザID
+	 */
+	public String get_id() {
+		return _id;
+	}
+
+	/**
+	 * ユーザIDのセッター
+	 * @param _id
+	 */
+	public void set_id(String _id) {
+		this._id = _id;
+	}
+
+	/**
+	 * ユーザ名のゲッター
+	 * @return ユーザ名
+	 */
+	public String get_name() {
+		return _name;
+	}
+
+	/**
+	 * ユーザ名のセッター
+	 * @param _name
+	 */
+	public void set_name(String _name) {
+		this._name = _name;
+	}
+
+}
