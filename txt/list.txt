@@ -1,0 +1,77 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="flowerProject.User" %>
+<%@ page import="flowerProject.Item" %>
+<% User currentUser = (User)request.getSession().getAttribute("currentUser"); %>
+<%
+	Item[] items = (Item[]) request.getAttribute("items");
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="STYLESHEET" href="css/list.css" type="text/css">
+<title>データ一覧</title>
+</head>
+<body>
+<h1>データ一覧</h1>
+<div align="right">
+<form action="login" method="post">
+<input type="hidden" name="action" value="logout">
+<input type="submit" id="logout" name="logout" value="ログアウト">
+</form>
+</div>
+<hr>
+<div align="right">ようこそ&nbsp;&nbsp;<%= currentUser.get_name() %>さん</div>
+	<table width="90%" border="0" class="toolbar">
+		<tr>
+			<form action="login" method="post">
+			<input type="hidden" name="action" value="add">
+			<td align="left"><input type="submit" value="データ登録"></td>
+			</form>
+			<td align="right">
+			<table border="0">
+			<form action="login" method="post">
+			<input type="hidden" name="action" value="search">
+				<tr>
+					<td>検索キーワード</td>
+					<td><input type="text" id="keyWord" name="keyWord" value="" size="24"></td>
+					<td><input type="submit" value="検索"></td>
+				</tr>
+			</form>
+			</table>
+			</td>
+		</tr>
+	</table>
+	<table width="90%" border="0" class="list">
+		<tr>
+			<th>担当者</th>
+			<th>花の名前</th>
+			<th>花の色</th>
+			<th>花の開花時期</th>
+			<th>花の好む生育地</th>
+			<th colspan="2">操作</th>
+		</tr>
+		<% for(int i=0; i<items.length; i++) { %>
+		<tr>
+			<td><%= currentUser.get_name() %></td>
+			<td><%= items[i].get_name() %></td>
+			<td><%= items[i].get_color() %></td>
+			<td><%= items[i].get_span() %></td>
+			<td><%= items[i].get_place() %></td>
+			<form action="login" method="post">
+			<input type="hidden" name="action" value="update">
+			<input type="hidden" name="updateRowNo" value=<%= items[i].get_id() %>>
+			<td><input type="submit" value="更新"></td>
+			</form>
+			<form action="login" method="post">
+			<input type="hidden" name="action" value="delete">
+			<input type="hidden" name="deleteRowNo" value=<%= items[i].get_id() %>>
+			<td><input type="submit" value="削除"></td>
+			</form>
+		<% } %>
+		</tr>
+	</table>
+</body>
+</html>
