@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="flowerProject.Item" %>
+<%
+	Item deleteItem = (Item) request.getAttribute("deleteItem");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="STYLESHEET" href="css/delete.css" type="text/css">
+<title>データ削除</title>
+</head>
+<body>
+<h1>データ削除</h1>
+<div align="right">
+<form action="login" method="post">
+<input type="hidden" name="action" value="logout">
+<input type="submit" id="logout" name="logout" value="ログアウト">
+</form>
+</div>
+<hr>
+<div>
+	<table border="0">
+	<form action="login" method="post">
+	<input type="hidden" name="action" value="delete_action">
+	<input type="hidden" name="id" value=<%= deleteItem.get_id() %>>
+	<tr>
+		<th class="delete">花の名前</th>
+		<td><label id="name"><%= deleteItem.get_name() %></label></td>
+	</tr>
+	<tr>
+		<th class="delete">花の色</th>
+		<td><label id="color"><%= deleteItem.get_color() %></label></td>
+	</tr>
+	<tr>
+		<th class="delete">花の開花時期</th>
+		<td><label id="span"><%= deleteItem.get_span() %></label></td>
+	</tr>
+	<tr>
+		<th class="delete">花の好む生育地</th>
+		<td><label id="place"><%= deleteItem.get_place() %></label></td>
+	</tr>
+	<tr>
+		<td align="center" class="delete"><input type="submit" id="delete" name="delete" value="上記のデータ内容を削除"></td>
+	</form>
+	<form action="login" method="post">
+	<input type="hidden" name="action" value="list">
+		<td align="center" class="cancel"><input type="submit" id="cancel" name="cancel" value="キャンセル"></td>
+	</form>
+	</tr>
+	</table>
+</div>
+</body>
+</html>
